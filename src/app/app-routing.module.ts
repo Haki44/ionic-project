@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'champions/list',
+    loadChildren: () => import('./champions/list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'champions/detail',
+    loadChildren: () => import('./champions/detail/detail.module').then( m => m.DetailPageModule)
+  },
 ];
 
 @NgModule({
